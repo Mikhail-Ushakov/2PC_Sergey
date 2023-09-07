@@ -1,0 +1,60 @@
+from random import choice
+def game():
+    progress = True
+    lives = 3
+    word = ['orange', 'apple', 'strawberry']
+
+    word_in_play = get_word(word)
+    template = start_template(word_in_play)
+    welcome_speech(list_to_string_convert(template))
+
+    while progress:
+        user_guess = input('Введите букву:')
+        template = build_template(template, word_in_play, user_guess)
+        print(template)
+        progress = check_win(template)
+
+        if not check_mistake(word_in_play, user_guess):
+            lives = lives - 1
+            print(f'Осталось {lives} попытки')
+
+        if lives == 0:
+            print('Вы проиграли')
+            break
+
+def check_mistake(word, guess):
+    if guess not in word:
+        return False
+    else:
+        return True
+
+def check_win(temp):
+    if '_' in temp:
+        return True
+    else:
+        return False
+
+def build_template(t,w,g=''):
+    for i in range(len(w)):
+        if t[i] == '_':
+            if w[i] == g:
+                t[i] = w[i]
+            else:
+                t[i] = '_'
+    return t
+
+def get_word(word):
+    return choice(word)
+
+def start_template(word_in_play):
+    count = list('_'*len(word_in_play))
+    return count
+    
+def welcome_speech(t):
+    print(f'''
+    Загаданное слово состоит из {len(t)} букв {t}''')
+
+def list_to_string_convert(t):
+    return ''.join(t)
+    
+game()

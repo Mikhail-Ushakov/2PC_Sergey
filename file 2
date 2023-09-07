@@ -1,0 +1,21 @@
+# with open('new_file','a') as f:
+#     f.writelines(['gfjyf', 'tethfhyjfh', 'hyjgfyhfthd'])
+# def f():
+#     return
+# print(type(f()))
+# a = [print, f, type]
+# print(a)
+# b = print
+# b('text')
+# def b(x):
+#     return x < 0
+# a = list(filter(b, [1,2,3,4,10,8,-10,9,-1]))
+# print(a)
+
+# 146346363747[4]
+
+def f(a,b,c):
+    d = (b**2 - 4*a*c)**0.5
+    x1 = (-1*b + d)/2*a
+    return x1
+print(f(1,-2,3))

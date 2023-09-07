@@ -1,0 +1,13 @@
+from random import randint
+n = randint(1,100)
+print(n)
+print('Попробуй угадай число от 1 до 100')
+while True:
+    a = int(input('Ваше предположение:'))
+    if n == a:
+        print('Вы угадали верно!')
+        break
+    elif n > a:
+        print(f'Вы не угадали попробуйте больше, чем {a}')
+    else:
+        print(f'Вы не угадали попробуйте меньше, чем {a}')

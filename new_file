@@ -1,0 +1,25 @@
+# def merge_dict(a,b):
+#     for i in a:
+#         if i in b:
+#             b[i] = [a[i], b[i]]
+#         else:
+#             b[i] = a[i]
+#     print(a,b)
+# merge_dict({'A': 1, 'C': 4, 'B': 2}, {'A': 3, 'B': 2})
+
+def find_uniq(a):
+    n = []
+    m = []
+    for i in a:
+        if i % 2 == 0:
+            n.append(i)
+        else:
+            m.append(i)
+    if len(n) > len(m):
+        print(m[0])
+    elif len(n) == len(m):
+        print('Уникальных чисел нет')
+    else:
+        print(n[0])
+
+find_uniq([2,4,0,100,4,11,36,13])
